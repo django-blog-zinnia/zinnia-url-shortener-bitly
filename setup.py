@@ -4,7 +4,7 @@ from setuptools import find_packages
 
 setup(
     name='zinnia-url-shortener-bitly',
-    version='0.1',
+    version='1.0',
 
     description='Bit.ly URL shortener backend for django-blog-zinnia',
     long_description=open('README.rst').read(),
