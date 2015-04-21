@@ -2,6 +2,8 @@
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 
+from zinnia.settings import PROTOCOL
+
 try:
     from django_bitly.models import Bittle
 except ImportError:
@@ -18,6 +20,5 @@ def backend(entry):
     """
     Bit.ly URL shortener backend for Zinnia.
     """
-    scheme = getattr(settings, 'ZINNIA_PROTOCOL', 'http')
-    bittle = Bittle.objects.bitlify(entry, scheme=scheme)
+    bittle = Bittle.objects.bitlify(entry, scheme=PROTOCOL)
     return bittle.shortUrl
